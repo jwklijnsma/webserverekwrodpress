@@ -8,31 +8,30 @@ RUN apt-get update \
 	&& apt-get install -y \
          nginx-full \
 	 libnginx-mod-http-geoip \
-	 php7.2-fpm \
-         php7.2-bcmath \
-         php7.2-gd \
-         php7.2-json \
-         php7.2-sqlite \
-         php7.2-mysql \
-         php7.2-curl \
-         php7.2-xml \
-         php7.2-mbstring \
-         php7.2-zip \
-	 php7.2-redis \
-	 php7.2-int \
-	 php7.2-geoip \
-	 php7.2-igbinary \
-	 php7.2-memcache \
-	 php7.2-soap \
-	 php7.2-msgpack \
-	 php7.2-memcached \
+	 php7.4-fpm \
+         php7.4-bcmath \
+         php7.4-gd \
+         php7.4-json \
+         php7.4-sqlite \
+         php7.4-mysql \
+         php7.4-curl \
+         php7.4-xml \
+         php7.4-mbstring \
+         php7.4-zip \
+	 php7.4-redis \
+	 php7.4-int \
+	 php7.4-geoip \
+	 php7.4-igbinary \
+	 php7.4-memcache \
+	 php7.4-soap \
+	 php7.4-msgpack \
+	 php7.4-memcached \
          mcrypt \
          nano \
 	 supervisor \
 	&& apt-get clean \
 	&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
 	;
-
 COPY config/nginx/* /etc/nginx/
 COPY config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY config/nginx/snippets/* /etc/nginx/snippets/
