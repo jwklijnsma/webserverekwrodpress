@@ -37,13 +37,13 @@ COPY config/nginx/snippets/* /etc/nginx/snippets/
 COPY config/nginx/modules-enabled/* /etc/nginx/modules-enabled/
 COPY config/nginx/conf.d/* /etc/nginx/conf.d/
 COPY config/php/* /etc/php/
-COPY config/php/7.2/cli/* /etc/php/7.2/cli/
-COPY config/php/7.2/cli/conf.d/* /etc/php/7.2/cli/conf.d/
-COPY config/php/7.2/fpm/* /etc/php/7.2/fpm/
-COPY config/php/7.2/fpm/conf.d/* /etc/php/7.2/fpm/conf.d/
-COPY config/php/7.2/fpm/pool.d/* /etc/php/7.2/fpm/pool.d/
-COPY config/php/7.2/mods-available/* /etc/php/7.2/mods-available/
-RUN rm -fr /etc/php/7.2/fpm/pool.d/www.conf
+COPY config/php/7.2/cli/* /etc/php/7.4/cli/
+COPY config/php/7.2/cli/conf.d/* /etc/php/7.4/cli/conf.d/
+COPY config/php/7.2/fpm/* /etc/php/7.4/fpm/
+COPY config/php/7.2/fpm/conf.d/* /etc/php/7.4/fpm/conf.d/
+COPY config/php/7.2/fpm/pool.d/* /etc/php/7.4/fpm/pool.d/
+COPY config/php/7.2/mods-available/* /etc/php/7.4/mods-available/
+RUN rm -fr /etc/php/7.4/fpm/pool.d/www.conf
 RUN groupadd -r -g 2001 ticketshop
 RUN useradd -r -u 2001 -g 2001 -ms /bin/bash ticketshop
 RUN mkdir -p /home/ticketshop
