@@ -44,11 +44,11 @@ COPY config/php/7.2/fpm/conf.d/* /etc/php/7.4/fpm/conf.d/
 COPY config/php/7.2/fpm/pool.d/* /etc/php/7.4/fpm/pool.d/
 COPY config/php/7.2/mods-available/* /etc/php/7.4/mods-available/
 RUN rm -fr /etc/php/7.4/fpm/pool.d/www.conf
-RUN groupadd -r -g 2001 ticketshop
-RUN useradd -r -u 2001 -g 2001 -ms /bin/bash ticketshop
-RUN mkdir -p /home/ticketshop
+RUN groupadd -r -g 2001 skinforskin
+RUN useradd -r -u 2001 -g 2001 -ms /bin/bash skinforskin
+RUN mkdir -p /var/www/html
 #USER 2001
-WORKDIR /home/ticketshop
+WORKDIR /var/www/html
 EXPOSE 80/tcp 443/tcp 22/tcp
 STOPSIGNAL SIGQUIT
 # Let supervisord start nginx & php-fpm
