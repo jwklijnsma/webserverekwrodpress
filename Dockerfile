@@ -7,7 +7,6 @@ RUN apt-get update \
 	&& apt-get upgrade -y \
 	&& apt-get install -y \
          nginx-full \
-	 libnginx-mod-http-geoip \
 	 php7.4-fpm \
          php7.4-bcmath \
          php7.4-gd \
@@ -36,7 +35,6 @@ COPY config/nginx/* /etc/nginx/
 COPY config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY config/nginx/snippets/* /etc/nginx/snippets/
 COPY config/nginx/modules-enabled/* /etc/nginx/modules-enabled/
-COPY config/nginx/geoip/* /etc/nginx/geoip/
 COPY config/nginx/conf.d/* /etc/nginx/conf.d/
 COPY config/php/* /etc/php/
 COPY config/php/7.2/cli/* /etc/php/7.2/cli/
